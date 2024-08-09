@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>{{actionTitle}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="personaForm">
+        <mat-grid-list cols="1" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input  matInput formControlName="nombre" autocomplete="off">
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list cols="1" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Apellido</mat-label>
+                    <input  matInput formControlName="apellido" autocomplete="off">
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list cols="1" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Edad</mat-label> 
+                    <input  matInput type="number" formControlName="edad" autocomplete="off">
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list> 
+        <mat-grid-list cols="1" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Domicilio</mat-label>
+                    <input  matInput formControlName="direccion" autocomplete="off">
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="warn">Close</button>
+  <button mat-raised-button [disabled]="personaForm.invalid" (click)="addEditPersona()" color="primary">{{actionBtn}}</button>
+</div>
